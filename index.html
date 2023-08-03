@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .circle{
+        align-items: center;
+            text-align: center;
+            width: 110px;
+            border: none;
+            height: 90px;
+            border-radius: 100%;
+    }
+    .square{
+        margin-left: 1px;
+            width: 100px;
+            border: none;
+            height: 100px;
+           
+    }
+    .rectangle{
+           margin-left: 1px;
+            width: 150px;
+            border: none;
+            height: 100px;
+           
+    }
+    .body{
+        position: relative;
+        background-color: white;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 40vh;  
+    }
+    .cotainer{
+        font-family: monospace;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
+    .head{
+        color: rgb(5, 3, 7);
+        font-family: monospace;
+        background-size: cover;
+        background-image: url('https://images.unsplash.com/photo-1535707798491-2303c91896a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTJ8NjE3OTk5NjV8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
+        display: absolute;
+        width: 100%;
+        height: 50vh;
+    }
+    .content{
+        position: absolute;
+        margin-left: 30%;
+    }
+    option{
+        background-color: antiquewhite;
+        border: none;
+        border-radius: 40px;
+    }
+    input{
+        border-radius: 40px;
+    }
+</style>
+<body>
+    <div class="container">
+    <div class="head">
+        <div class="content">
+        <h1>SHAPE GENERATOR</h1>
+        <h1>SELECT THE SHAPE</h1>
+        <select name="" id="sec">
+            <option value="circle">Circle</option>
+            <option value="rectangle">Rectangle</option>
+            <option value="square">Square</option>
+        </select>
+        <br>
+        <h1><input type="color" name="" id="color"> SELECT THE COLOR</h1>
+        <h1><input type="number" name="" id="n">ENTER NO OF TIMES</h1>
+        <button type="button" onclick="fuc()">Ok</button>
+        </div>
+    </div>
+    <div class="body" id="b"></div>
+    </div>
+</body>
+<script>
+    count =1;
+    function fuc() {
+    const ba = document.querySelector('#b');
+    const value = document.getElementById('sec').value;
+   
+    val = document.getElementById('n').value;
+    col = document.getElementById('color').value;
+    console.log(val);
+    for(var i=0;i<val;i++){
+    const da = document.createElement('div');
+    da.setAttribute('id', 'id1');
+    da.className = value;
+    da.style.backgroundColor = col; 
+    da.innerHTML = count;
+    count = count+1;
+    ba.appendChild(da);
+    }
+    }
+</script>
+</html>
